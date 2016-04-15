@@ -1,0 +1,7 @@
+parameters:
+    pai_rest.parcel.class: PAI\ParcelBundle\Entity\Parcel
+
+services:
+    pai_rest.parcel_form.handler:
+        class: PAI\ParcelBundle\Handler\ParcelFormHandler
+        arguments: ['@doctrine.orm.entity_manager', %pai_rest.parcel.class%, '@form.factory', 'PAI\ParcelBundle\Form\ParcelType']
